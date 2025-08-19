@@ -10,31 +10,51 @@ body {
   flex-direction: column;
 }
 
-#motivacao {
-  width: 100%;
-  background-color: #3c0e8a;
+#motivacao-container {
+  position: relative;
+  overflow: hidden;
+  background: #3c0e8a;
   color: #ffcc00;
   font-family: 'Press Start 2P', cursive;
-  font-size: 0.8em;
-  padding: 10px 0;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 10;
-}
-
-#motivacao span {
-  display: inline-block;
-  padding-left: 100%;
   white-space: nowrap;
-  animation: marquee 15s linear infinite;
+  padding: 10px 0;
+  height: 25px; /* altura fixa */
 }
 
-@keyframes marquee {
-  0% { transform: translateX(0%); }
-  100% { transform: translateX(-100%); }
+.marquee {
+  position: absolute;
+  white-space: nowrap;
+  animation: slide 12s linear infinite;
 }
+
+/* Mensagem 1 */
+.msg1 {
+  animation-delay: 0s;
+}
+
+/* Mensagem 2 */
+.msg2 {
+  animation-delay: 6s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);   /* começa fora da direita */
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-100vw); /* sai totalmente pela esquerda */
+    opacity: 1;
+  }
+  51% {
+    opacity: 0; /* já está fora, some */
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+}
+
 
 #Titulo {
   margin-top: 80px;
