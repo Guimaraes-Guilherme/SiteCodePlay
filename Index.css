@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  background-color: #5111bb;
+  color: #ffffff;
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#motivacao-container {
+  position: relative;
+  overflow: hidden;
+  background: #3c0e8a;
+  color: #ffcc00;
+  font-family: 'Press Start 2P', cursive;
+  white-space: nowrap;
+  padding: 10px 0;
+  height: 25px; 
+}
+
+.marquee {
+  position: absolute;
+  white-space: nowrap;
+  animation: slide 12s linear infinite;
+}
+
+.msg1 {
+  animation-delay: 0s;
+}
+
+.msg2 {
+  animation-delay: 6s;
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(100%);  
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-110vw); 
+    opacity: 1;
+  }
+  51% {
+    opacity: 0; 
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-100vw);
+  }
+}
+
+
+#Titulo {
+  margin-top: 80px;
+}
+
+#Titulo h1 {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 1.5em;
+  animation: pulsar 3s infinite;
+}
+
+#Titulo h4 {
+  margin-top: 20px;
+  font-weight: normal;
+  color: #e5d4ff;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8em;
+}
+
+#Modos {
+  margin-top: 50px;
+  flex: 1; 
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px auto;
+  padding: 15px 30px;
+  font-size: 1em;
+  border: none;
+  border-radius: 10px;
+  background-color: #b380d2;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  animation: pulsar 3s infinite;
+  font-family: 'Press Start 2P', cursive;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+@keyframes pulsar {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+i {
+  font-size: 24px;
+}
+
+footer {
+  background-color: #3c0e8a;
+  padding: 15px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7em;
+  color: #e5d4ff;
+}
